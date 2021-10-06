@@ -1,0 +1,27 @@
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+ul li a{
+    min-height: 300px;
+    width: 250px;
+    border: 1px solid whitesmoke;
+    border-radius: 1em;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #e72929;
+
+}
+ul li a img{
+    height: 150px;
+}
+li a:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
