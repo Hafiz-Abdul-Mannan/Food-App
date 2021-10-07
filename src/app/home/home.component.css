@@ -7,15 +7,15 @@ ul{
     padding: 0;
 }
 ul li a{
-    min-height: 300px;
+    min-height: 250px;
     width: 250px;
-    border: 1px solid whitesmoke;
+    border: 3px solid whitesmoke;
     border-radius: 1em;
     margin: 0.5em;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    color: #e72929;
+    color: hsl(36, 80%, 53%);
 
 }
 ul li a img{
@@ -24,4 +24,52 @@ ul li a img{
 li a:hover{
     opacity: 0.9;
     cursor: pointer;
+}
+.content{
+    padding: .5rem 1rem;
+    position: relative;
+}
+.favourite{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+.favourite.not{
+    color: gray;
+}
+.stars{
+    margin-top: 1rem;
+    margin-bottom: .5rem; ;
+}
+.product-item-footer{
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+}
+.origin{
+    flex: 4;
+}
+.origin span{
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: .7rem;
+    color: gray;
+    margin-right: .3rem;
+    padding: 0 .3rem;
+}
+.cook-time{
+    font-size: .8rem;
+    position: relative;
+}
+.cook-time mat-icon{
+    position: absolute;
+    left:-20px;
+    top:2px;
+    font-size: medium;
+}
+.price{
+    color:#414141;
+    margin-top: .7rem;
 }

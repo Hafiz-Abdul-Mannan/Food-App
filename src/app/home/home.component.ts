@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { StarRatingComponent } from 'ng-starrating/components/star-rating/star-rating.component';
 import { Food } from '../food.model';
 import { FoodService } from '../services/food/food.service';
@@ -10,12 +11,23 @@ import { FoodService } from '../services/food/food.service';
 })
 export class HomeComponent implements OnInit {
   foods: Food[] = [];
-  constructor(private foodService: FoodService) { }
+  constructor(private route: ActivatedRoute, private foodService: FoodService) { }
 
   ngOnInit(): void {
-    this.foods = this.foodService.getAll();
+    this.route.params.subscribe(params => {
+      if (params.searchTerm) {
+        this.foods = this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
+      } else if (params.tag) {
+        this.foods = this.foodService.getAllFoodsByTag(params.tag);
+      }
+      else {
+        this.foods = this.foodService.getAll();
+      }
+    })
+
   }
   onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent }) {
   }
+
 }
 
