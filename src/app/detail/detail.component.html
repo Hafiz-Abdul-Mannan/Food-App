@@ -1,0 +1,34 @@
+<div class="container">
+    <img [src]="food.imageURL" alt="food.name">
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{food.name}}
+            </span>
+            <span class="favourite">
+                <mat-icon class="{{food.favourite?'':'not'}}">favorite</mat-icon>
+            </span>
+        </div>
+        <div class="rating">
+            <star-rating [value]="5" [totalstars]="5" checkedcolor="hsl(36, 80%, 53%)" uncheckedcolor="black"
+                size="24px" [readonly]="false" (rate)="onRate($event)"></star-rating>
+        </div>
+        <div class="origins">
+            <span *ngFor="let origin of food.origins">
+                {{origin}}
+            </span>
+        </div>
+        <div class="tags">
+            <app-tags [foodPageTags]="food.tags" justifyContent="start"></app-tags>
+        </div>
+        <div class="cook-time">
+            <span>
+                Time to cook about <strong>{{food.cookTime}}</strong>
+            </span>
+        </div>
+        <div class="price">
+            <span>{{food.price|currency:'EUR'}}</span>
+        </div>
+        <button>Add to Cart</button>
+    </div>
+</div>
