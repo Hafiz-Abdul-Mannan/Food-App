@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Food } from '../food.model';
-import { FoodService } from '../services/food/food.service';
+import { FoodService } from '../services/food.service';
 
 @Component({
   selector: 'app-header',

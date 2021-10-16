@@ -12,6 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { TagsComponent } from './tags/tags.component';
 import { DetailComponent } from './detail/detail.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetailComponent } from './detail/detail.component';
     HomeComponent,
     SearchComponent,
     TagsComponent,
-    DetailComponent
+    DetailComponent,
+    CartPageComponent,
   ],
   imports: [
     BrowserModule,

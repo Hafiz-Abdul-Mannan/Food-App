@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StarRatingComponent } from 'ng-starrating';
 import { Food } from '../food.model';
-import { FoodService } from '../services/food/food.service';
+import { CartService } from '../services/cart.service';
+import { FoodService } from '../services/food.service';
 
 @Component({
   selector: 'app-detail',
@@ -11,7 +12,7 @@ import { FoodService } from '../services/food/food.service';
 })
 export class DetailComponent implements OnInit {
   food: Food;
-  constructor(private route: ActivatedRoute, private foodService: FoodService) {
+  constructor(private route: ActivatedRoute, private foodService: FoodService, private cartService: CartService, private router: Router) {
     route.params.subscribe((params) => {
       if (params.id)
         this.food = foodService.getFoodById(params.id);
@@ -22,5 +23,8 @@ export class DetailComponent implements OnInit {
   }
   onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent }) {
   }
-
+  addToCart() {
+    this.cartService.addToCart(this.food);
+    this.router.navigateByUrl('/cart-page');
+  }
 }

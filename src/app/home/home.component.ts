@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StarRatingComponent } from 'ng-starrating/components/star-rating/star-rating.component';
 import { Food } from '../food.model';
-import { FoodService } from '../services/food/food.service';
+import { FoodService } from '../services/food.service';
 
 @Component({
   selector: 'app-home',

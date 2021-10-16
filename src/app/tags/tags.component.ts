@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Tag } from '../food.model';
-import { FoodService } from '../services/food/food.service';
+import { FoodService } from '../services/food.service';
 
 @Component({
   selector: 'app-tags',
