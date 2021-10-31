@@ -2,7 +2,7 @@ import { Food } from "./food.model";
 
 export class CartItem {
     food: Food;
-    quantity: number;
+    quantity: number = 1;
     constructor(food: Food) {
         this.food = food;
     }
